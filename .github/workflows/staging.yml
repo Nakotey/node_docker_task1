@@ -32,6 +32,9 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/node_task1:v1.0.0
+
+      - name: Run Test
+        id: test
         run: npm test
 
       - name: Image digest
