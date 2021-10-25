@@ -35,6 +35,7 @@ jobs:
 
       - name: Run Test
         id: test
+        run: npm install -g mocha
         run: npm test
 
       - name: Image digest
