@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM node:alpine as  base
+FROM node:alpine as base
 ENV NODE_ENV=production
 
 WORKDIR /app
@@ -18,6 +18,7 @@ FROM base as prod
 RUN npm ci --production
 RUN npm install -g nodemon
 COPY . .
+EXPOSE 3000
 CMD [ "nodemon", "./bin/www" ]
 
 
